@@ -1,0 +1,224 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --font--pri: "Open Sans";
+  --font-accent: "Bebas";
+  --clr--pri: #333;
+  --clr--neutral: #fff;
+  --clr--accent: #e0c320;
+  --space--default: 20px;
+  --transition--time-1: 100ms;
+  --transition--time-2: 200ms;
+  --transition--time-3: 300ms;
+  --transition--time-4: 400ms;
+  --transition--time-5: 500ms;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font--pri);
+}
+
+body.main-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: var(--space--default);
+  background-color: var(--clr--pri);
+  color: var(--clr--neutral);
+  -webkit-box-shadow: 0 0 5px 0 var(--clr--pri);
+          box-shadow: 0 0 5px 0 var(--clr--pri);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .nav ul li {
+  position: relative;
+  padding: 3px 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-transform: lowercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav ul li i {
+  margin-right: 10px;
+}
+
+header .nav ul li::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: -3px;
+  background-color: var(--clr--accent);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+header .nav ul li:hover, header .nav ul li.active {
+  cursor: pointer;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+header .nav ul li:hover::after, header .nav ul li.active::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+header .nav ul li:not(:last-child) {
+  margin-right: var(--space--default);
+}
+
+header .nav ul li:not(:first-child) {
+  margin-left: var(--space--default);
+}
+
+.menu {
+  position: fixed;
+  top: 68px;
+  right: 0;
+  background: rgba(34, 34, 34, 0.9);
+  width: 100%;
+  height: calc(100% - 68px);
+  padding-left: var(--space--default);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 60px;
+      grid-template-rows: 1fr 60px;
+  opacity: 0;
+}
+
+.menu.active {
+  opacity: 1;
+  -webkit-transition: var(--transition--time-3) ease-in;
+  transition: var(--transition--time-3) ease-in;
+}
+
+.menu.active ul,
+.menu.active footer {
+  margin-left: auto;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.menu ul,
+.menu footer {
+  padding: var(--space--default);
+  max-width: 400px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: var(--transition--time-3) ease;
+  transition: var(--transition--time-3) ease;
+  -webkit-transition-delay: var(--transition--time-1);
+          transition-delay: var(--transition--time-1);
+}
+
+.menu ul {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+}
+
+.menu ul li {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid var(--clr--accent);
+}
+
+.menu ul li i {
+  margin-right: 10px;
+}
+
+.menu footer {
+  height: 60px;
+  background-color: #222;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 300;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu footer img {
+  display: block;
+  margin-left: var(--space--default);
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 1rem;
+  width: auto;
+}
+
+main {
+  padding: var(--space--default);
+  height: 100%;
+}
+
+footer {
+  padding: var(--space--default);
+  -webkit-box-shadow: 0 0 5px 0 #eee;
+          box-shadow: 0 0 5px 0 #eee;
+  font-size: .75rem;
+  text-align: center;
+  font-weight: 700;
+}
+/*# sourceMappingURL=main.css.map */
